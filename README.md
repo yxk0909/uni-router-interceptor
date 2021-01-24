@@ -11,7 +11,7 @@ uni-router-interceptor 是一个基于uni-app框架的纯路由拦截插件
 
 > 本插件的本质还是 uni 的自带路由，只是对 uni 的自带路由进行了包装  
 
-#基本使用
+# 基本使用  
 下载插件后直接导入即可用法基本和 Vue-Router 一样
 
 ```javascript
@@ -76,7 +76,7 @@ onLoad(options) {
 
 > Tips: 如果不需要传递参数，可以直接使用 this.$Router.navigateTo('/pages/index/index')
 
-#路由拦截
+# 路由拦截  
 
 ```javascript
 // 路由前置拦截器
