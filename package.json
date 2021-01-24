@@ -1,0 +1,24 @@
+{
+  "name": "uni-router-interceptor",
+  "version": "1.0.0",
+  "description": "a simple router interceptor for uni-app",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yxk0909/uni-router-interceptor.git"
+  },
+  "keywords": [
+    "uni-app",
+    "router",
+    "interceptor"
+  ],
+  "author": "yxk",
+  "license": "MIT License",
+  "bugs": {
+    "url": "https://github.com/yxk0909/uni-router-interceptor/issues"
+  },
+  "homepage": "https://github.com/yxk0909/uni-router-interceptor#readme"
+}
