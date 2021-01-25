@@ -1,6 +1,6 @@
 {
   "name": "uni-router-interceptor",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "a simple router interceptor for uni-app",
   "main": "src/index.js",
   "scripts": {
