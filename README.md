@@ -17,7 +17,7 @@ uni-router-interceptor 是一个基于uni-app框架的纯路由拦截插件
 ```javascript
 // router.js 定义路由
 
-import Router from './router/index.js'
+import Router from './index.js'
 
 export default new Router({
   homePage: '' // 首页的page路由
