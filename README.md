@@ -7,17 +7,34 @@ uni-router-interceptor 是一个基于uni-app框架的纯路由拦截插件
 
 
 解决这个问题我的思路是到10层时直接 `reLaunch` 清空一下路由栈，自己把路由的历史记录保存起来，方便进行路由回退  
-如果有更好的方法，欢迎各位大佬提出意见
+ 
+如果有更好的方法，欢迎各位大佬提出意见  
+
+下载插件后直接导入即可，用法基本和 Vue-Router 一样
 
 > 本插件的本质还是 uni 的自带路由，只是对 uni 的自带路由进行了包装  
 
-# 基本使用  
-下载插件后直接导入即可用法基本和 Vue-Router 一样
+# 安装  
 
+> 建议直接使用 npm 进行安装使用
+
+#### 使用 NPM 安装
+```markdown
+npm install uni-router-interceptor
+```
+使用  
 ```javascript
-// router.js 定义路由
+import Router from 'uni-router-interceptor'
 
-import Router from './index.js'
+export default new Router({
+  homePage: '' // 首页的page路由
+})
+```
+
+#### 直接下载使用
+```javascript
+// 以下路径需根据项目实际情况填写
+import Router from './src/index.js'
 
 export default new Router({
   homePage: '' // 首页的page路由
@@ -32,6 +49,10 @@ Vue.use(router)
 
 之后就可以抛弃 `uni.navigateTo()` 这样的uni自带路由跳转方法，改成 `this.$Router.navigateTo()` 进行愉快的使用啦  
 并且 uni 自带路由跳转参数基本全部都支持。其中 `this.$Router` 中的路由方法完全和 uni 自带的一样  
+
+# API
+
+#### 基本使用  
 
 ```javascript
 // 保留当前页面，跳转到应用内的某个页面
@@ -76,7 +97,7 @@ onLoad(options) {
 
 > Tips: 如果不需要传递参数，可以直接使用 this.$Router.navigateTo('/pages/index/index')
 
-# 路由拦截  
+#### 路由拦截  
 
 ```javascript
 // 路由前置拦截器
@@ -100,5 +121,5 @@ router.error(() => {
 * from 当前路由对象
 * next 路由放行，执行跳转操作
 
-> this.$Router.pages // 当前页面栈的实例  
-> this.$Router.history // 路由历史记录信息
+> this.$Router.pages // 当前页面栈的实例数组  
+> this.$Router.history // 路由历史记录信息数组
