@@ -13,7 +13,8 @@
   "keywords": [
     "uni-app",
     "router",
-    "interceptor"
+    "interceptor",
+    "uni-router-interceptor"
   ],
   "author": "yxk",
   "license": "MIT License",
