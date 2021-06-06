@@ -1,9 +1,9 @@
 /**
  * uni app 简单实现路由导航守卫，和路由历史记录
  * @desc 实例挂载到 Vue 原型的$Router下，使用方法类似 vue-router
- * @version 1.0.1
+ * @version 1.0.2
  * @author yxk
- * @date 2020/01/25
+ * @date 2020/06/06
  */
 import {
   isObject,
