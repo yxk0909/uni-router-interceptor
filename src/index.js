@@ -51,8 +51,8 @@ export default class Router {
     // @see https://developers.weixin.qq.com/miniprogram/dev/api/route/wx.navigateTo.html
     this.maxlength = 10
 
-    this.beforeEachCallback = () => {}
-    this.afterEachCallback = () => {}
+    this.beforeEachCallback = null
+    this.afterEachCallback = null
     this.errorCallback = error => {
       console.log('error', error)
     }
@@ -197,12 +197,16 @@ export default class Router {
       uni[type]({
         ...getRealParams(to),
         success: () => {
-          that.afterEachCallback(to, from)
+					if (that.afterEachCallback) {
+						that.afterEachCallback(to, from)
+					}
         },
         fail: err => {
           const len = that.history.length
           that.history = deepCopy(that._oldHistory)
-          that.errorCallback(err, to, from)
+					if (that.errorCallback) {
+						that.errorCallback(err, to, from)
+					}
         },
         complete: () => {
           that.pages = getCurrentPages()
