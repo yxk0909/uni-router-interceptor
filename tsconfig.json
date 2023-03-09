@@ -1,18 +1,17 @@
 {
   "compilerOptions": {
-    /* Visit https://aka.ms/tsconfig to read more about this file */
-    "target": "ESNext",
-    "module": "ESNext",                             /* Specify what module code is generated. */
-    "moduleResolution": "node",                     /* Specify how TypeScript looks up a file from a given module specifier. */
     "strict": true,
-    "outDir": "lib",
-    "resolveJsonModule": true,
-    "esModuleInterop": true,
-    "forceConsistentCasingInFileNames": true,            /* Ensure that casing is correct in imports. */
-    "lib": ["ESNext", "DOM"],
-    "skipLibCheck": true,
     "allowSyntheticDefaultImports": true,
-    "declaration": true
+    "outDir": "dist",
+    "noImplicitAny": true,
+    "module": "ESNext",
+    "baseUrl": "./",
+    "moduleResolution": "Node",
+    "target": "es5",
+    "lib": ["ESNext", "DOM"],
+    "allowJs": true,
+    "declaration": true,
+    "declarationDir": "dist/types/"
   },
-  "include": ["./src/**/*"]
+  "include": ["./src/**/*", "./src/**/*.d.ts"]
 }
