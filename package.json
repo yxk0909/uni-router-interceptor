@@ -26,7 +26,8 @@
   },
   "homepage": "https://github.com/yxk0909/uni-router-interceptor#readme",
   "files": [
-    "dist"
+    "dist",
+    "types"
   ],
   "devDependencies": {
     "@webpack-cli/generators": "^3.0.1",

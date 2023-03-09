@@ -4,7 +4,7 @@
  * @version 2.0.0.beta
  *  https://github.com/yxk0909/uni-router-interceptor.git
  */
-import { ExtendObject, RouteParams, RouteOptions } from './types'
+import { ExtendObject, RouteParams, RouteOptions } from '../types'
 import {
   deepCopy,
   isArray,

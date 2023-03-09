@@ -2,6 +2,7 @@
   "compilerOptions": {
     "strict": true,
     "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
     "outDir": "dist",
     "noImplicitAny": true,
     "module": "ESNext",
@@ -13,5 +14,13 @@
     "declaration": true,
     "declarationDir": "dist/types/"
   },
-  "include": ["./src/**/*", "./src/**/*.d.ts"]
+  "include": [
+    "./src/**/*",
+    "./src/**/*.d.ts",
+    "./types/**/*",
+    "./types/**/*.d.ts"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
 }
