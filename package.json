@@ -2,9 +2,11 @@
   "name": "uni-router-interceptor",
   "version": "1.0.2",
   "description": "a simple router interceptor for uni-app",
-  "main": "src/index.js",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "rm -rf lib && tsc"
   },
   "repository": {
     "type": "git",
@@ -21,5 +23,11 @@
   "bugs": {
     "url": "https://github.com/yxk0909/uni-router-interceptor/issues"
   },
-  "homepage": "https://github.com/yxk0909/uni-router-interceptor#readme"
+  "homepage": "https://github.com/yxk0909/uni-router-interceptor#readme",
+  "dependencies": {
+    "typescript": "^4.9.5"
+  },
+  "files": [
+    "lib/**/*"
+  ]
 }
