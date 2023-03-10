@@ -4,7 +4,7 @@
  * @version 2.0.0.beta
  *  https://github.com/yxk0909/uni-router-interceptor.git
  */
-import { ExtendObject, RouteParams, RouteOptions } from '../types'
+import { ExtendObject, RouteParams } from './types'
 import {
   deepCopy,
   isArray,
@@ -22,6 +22,14 @@ const INTERCEPTOR_API: string[] = [
   'navigateBack',
   'preloadPage'
 ]
+
+/**
+ * 路由配置项
+ * @property {string} homePage 首页path
+ */
+interface RouteOptions {
+  homePage?: string
+}
 
 /**
  * 处理路由跳转的参数
@@ -90,9 +98,9 @@ class Router {
 
   [key: string]: any
 
-  constructor(options: RouteOptions) {
+  constructor(options: RouteOptions | null) {
     this.version = VERSION
-    this.homePage = options.homePage || '/'
+    this.homePage = options ? options.homePage || '/' : '/'
 
     this.pages = []
     this.history = []
@@ -169,7 +177,14 @@ class Router {
         key,
         {
           async invoke(args: string | Object) {},
-          success() {},
+          success() {
+             if (
+               _this.afterEachCallback &&
+               isFunc(_this.afterEachCallback)
+             ) {
+              _this.afterEachCallback()
+             }
+          },
           fail(error: any) {
             if (
               _this.errorCallback &&
