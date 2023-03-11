@@ -13,5 +13,6 @@ export interface ExtendObject {
  */
 export interface RouteParams extends ExtendObject {
   url: string,
+  delta?: number
   query?: ExtendObject
 }
