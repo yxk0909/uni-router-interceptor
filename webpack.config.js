@@ -5,15 +5,27 @@ const isProduction = process.env.NODE_ENV === 'production';
 
 const config = {
   entry: './src/index.ts',
+  experiments: {
+    outputModule: true,
+  },
   output: {
     path: path.resolve(__dirname, 'dist'),
     publicPath: './',
     filename: 'index.js',
+    // 导出为 module 库
+    library: {
+      type: "module"
+    }
   },
   plugins: [
     // Add your plugins here
     // Learn more about plugins from https://webpack.js.org/configuration/plugins/
   ],
+  optimization: {
+    // 关闭代码压缩
+    // https://www.webpackjs.com/configuration/optimization/#optimizationminimize
+    minimize: false
+  },
   module: {
     rules: [
       {
@@ -24,8 +36,7 @@ const config = {
       {
         test: /\.(eot|svg|ttf|woff|woff2|png|jpg|gif)$/i,
         type: 'asset',
-      },
-
+      }
       // Add your rules for custom modules here
       // Learn more about loaders from https://webpack.js.org/loaders/
     ],
