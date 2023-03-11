@@ -98,6 +98,8 @@ this.$Router.preloadPage({
 })
 ```
 
+#### 路由传参
+
 路由传递的 query 参数获取可以参照[uni 自带的参数获取方法](https://uniapp.dcloud.io/collocation/frame/lifecycle?id=%e9%a1%b5%e9%9d%a2%e7%94%9f%e5%91%bd%e5%91%a8%e6%9c%9f)
 
 ```javascript
