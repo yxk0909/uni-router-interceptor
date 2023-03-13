@@ -1,6 +1,6 @@
 {
   "name": "uni-router-interceptor",
-  "version": "2.0.0",
+  "version": "2.0.0.beta",
   "description": "a simple router interceptor for uni-app",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -8,7 +8,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "clean": "rm -rf dist",
     "build": "npm run clean && webpack --mode=production --node-env=production",
-    "build-tsc": "npm run clean && tsc -p tsconfig.json"
+    "build-tsc": "npm run clean && tsc -p tsconfig.json",
+    "pub": "npm run build && npm publish"
   },
   "repository": {
     "type": "git",
