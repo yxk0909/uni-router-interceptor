@@ -1,4 +1,4 @@
-# uni-router-interceptor `v2.0.0.beta`
+# uni-router-interceptor `v2.0.1.beta`
 a simple router interceptor for uni-app
 
 uni-router-interceptor 是一个基于uni-app框架的纯路由拦截插件   
@@ -55,11 +55,7 @@ app.use(router)
 
 ## Changelog
 
-* 添加支持 Vue 3.x，同时兼容 Vue 2.x
-* 支持 TypeScript
-* 支持拦截 uni 原生路由跳转方法
-* beforeEach next 函数追加 boolean 参数
-* 路由跳转参数支持传递对象
+* 修复小程序端路由栈溢出问题(#2)
 
 ## API
 
@@ -164,3 +160,6 @@ router.error(() => {
 
 > this.$Router.pages // 当前页面栈的实例数组  
 > this.$Router.history // 路由历史记录信息数组
+
+## LICENSE
+[MIT](LICENSE)

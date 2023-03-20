@@ -66,9 +66,9 @@ const getRealParams = function(params: RouteParams | string): Object {
 }
 
 class Router {
-  static version: string =  VERSION
+  version: string =  VERSION
 
-  static maxlength: number = 10
+  maxlength: number = 5
 
   /**
    * 主页路由
@@ -192,6 +192,17 @@ class Router {
 
       if (key !== 'preloadPage') {
         this._historyFunc = () => this.history.push(realParams)
+      }
+
+      if (key === 'navigateTo') {
+        if (this.pages.length >= this.maxlength) {
+          // @ts-ignore
+          uni.reLaunch(realParams)
+        } else {
+          // @ts-ignore
+          uni.navigateTo(realParams)
+        }
+        return
       }
 
       // @ts-ignore
